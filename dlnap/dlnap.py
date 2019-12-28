@@ -269,7 +269,7 @@ class DownloadProxy(BaseHTTPRequestHandler):
 
       content_type = ''
       if os.path.exists(url):
-         f = open(url)
+         f = open(url, 'rb')
          content_type = mimetypes.guess_type(url)[0]
          size = os.path.getsize(url)
       elif not url or not url.startswith('http'):
